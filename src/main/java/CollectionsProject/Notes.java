@@ -2,6 +2,7 @@ package CollectionsProject;
 
 
 
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -9,7 +10,9 @@ public class Notes extends Student {
 
 
 
-    Set<Byte> not = new TreeSet<>();
+    Set<Integer> not = new TreeSet<>();
+    ArrayList<Integer> notList  =new ArrayList<>(not);
+
 
        public void  notlar (){
         byte sayaç = 0;
@@ -19,13 +22,13 @@ public class Notes extends Student {
 
 
             System.out.println(list.get(i) + " kişisinin notunu giriniz" );
-           Byte notes = input.nextByte();
+           Integer notes = input.nextInt();
             not.add(notes);
             sayaç++;
 
 
         }
-
+notList = new ArrayList<>(not);
        }
 
 

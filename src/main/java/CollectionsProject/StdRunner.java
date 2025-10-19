@@ -15,9 +15,12 @@ s.isim();
  n.list = s.list;
 n.notlar();
  System.out.println(n.not);
+        Integer max = Collections.max(n.notList);
+        int index = n.notList.indexOf(max);
+        String enBasarili = n.list.get(index);
 
 
-        System.out.println("En yüksek not  : " +   Collections.max(n.not) ) ;
+        System.out.println("En yüksek not: " + max + " (" + enBasarili + ")");
 
 
 
