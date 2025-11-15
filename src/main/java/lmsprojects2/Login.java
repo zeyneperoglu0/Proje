@@ -47,7 +47,7 @@ public class Login   {
     public void forgottenPassword(Scanner input) {
 
         while (true){   System.out.println("Lütfen e-mail adresinizi giriniz");
-boolean ok = false;
+
        String email = input.nextLine();
         if (!Pojo.regMap.containsKey(email)){
             System.out.println("Bu emaile ait hesap bulunamadı. Tekrar deneyiniz");
@@ -62,7 +62,7 @@ boolean ok = false;
 
 if (!newPass1.equals(newPass2)){
     System.out.println("Şifreler eşleşmiyor tekrar deneyiniz");
-    continue;
+
 }
 else {
     Pojo.regMap.replace(email, newPass1);
