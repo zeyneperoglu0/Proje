@@ -13,7 +13,7 @@ public class Order {
 
 
 
-   private double sum =0;
+
     public  void categoryMethod(Scanner input) {
 while (true) {
     System.out.println("Hangi kategoriden sipariş vereceksiniz?" +
@@ -102,16 +102,14 @@ found= true;
 
 
 
-public void totalCost() {
-
+public  static void totalCost() {
+double sum=0;
     for (PojoFood w : basketList) {
 
     sum =  sum  +  w.getPrice()*w.getPortion();
-    System.out.println("Toplam tutar = " + sum);
-
 
 }
-
+    System.out.println("Toplam tutar = " + sum);
 
 
 

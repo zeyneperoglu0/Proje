@@ -80,7 +80,7 @@ else {
           String  email= input.nextLine();
             System.out.println("Lütfen eski şifrenizi giriniz");
             String oldPassword = input.nextLine();
-//            System.out.println("Lütfen yeni şifrenizi giriniz");
+
 
 
 String newPassword = r.passwordControl(input);

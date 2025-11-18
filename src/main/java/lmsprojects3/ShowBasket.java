@@ -20,8 +20,8 @@ public class ShowBasket {
                    total
            );
        });
-
        System.out.println("===========================================================");
 
-
-   }}
+       Order.totalCost();
+   }
+}
