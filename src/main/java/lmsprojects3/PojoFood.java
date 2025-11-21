@@ -10,8 +10,8 @@ public class PojoFood {
 
     private int code;
     private String name ;
-    private double price;
-    private double portion;
+    private static double price;
+    private static double portion;
 static int count =1000;
 private  Categories categories;
 
@@ -44,7 +44,7 @@ public PojoFood(String name, double price,Categories categories) {
         return name;
     }
 
-    public double getPrice() {
+    public static double getPrice() {
         return price;
     }
 
@@ -53,13 +53,17 @@ public PojoFood(String name, double price,Categories categories) {
     }
 
 
-    public double getPortion() {
+    public static double getPortion() {
         return portion;
     }
 
+    public static void setPortion(double portion) {
+        PojoFood.portion = portion;
+    }
 
-
-
+    public static void setPrice(double price) {
+        PojoFood.price = price;
+    }
 
     @Override
     public String toString() {

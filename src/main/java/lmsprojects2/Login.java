@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class Login   {
     Register r = new Register();
     public void loginWithRegisteredAccount(Scanner input) {
-
-        while (true) {
+int sayaç = 0;
+        while (sayaç!=3) {
             boolean found =false;
             System.out.println("Kayıtlı hesabınıza ait e-mail adresini giriniz");
             String email = input.nextLine();
@@ -25,10 +25,13 @@ public class Login   {
             }if (found){
                 break;//whiledan çık
             }else if (!found){
-                    System.out.println("Böyle bir hesap bulunamadı e-mail veya şifrenizden en az biri yanlış." +
-                            "\nLütfen tekrar giriş yapmayı deneyiniz hesabınız yoksa oluşturunuz");
+                sayaç++;
+                System.out.println("Böyle bir hesap bulunamadı e-mail veya şifrenizden en az biri yanlış." +
+                            "\nLütfen tekrar giriş yapmayı deneyiniz hesabınız yoksa oluşturunuz" +
+                        ",\nKALAN DEMENE HAKKI : "+  (3-sayaç));
 
-                    System.out.println("Şifrenizi unuttuysanız e'ye basınız");
+
+                    System.out.println("Şifrenizi unuttuysanız e'ye basınız tekrar denemek için entera h tuşuna basınız");
                     String forgot = input.nextLine();
                     if (forgot.equalsIgnoreCase("e")) {
                         forgottenPassword(input);
@@ -41,6 +44,9 @@ public class Login   {
 
 
 
+        }
+        if (sayaç>=3){
+            System.out.println("hesabınız kilitlendi 30 dakika sonra tekrar deneyiniz");
         }
     }
 

@@ -1,8 +1,10 @@
 package lmsprojects3;
 
+import java.util.List;
+
 public class ShowBasket {
 
-   public void showBasketMethod() {
+   public void showBasketMethod(   List<PojoFood> basketList) {
 
        System.out.println("\n========== SEPET ==========");
        System.out.printf("%-5s %-25s %-10s %-10s %-10s\n",
@@ -10,7 +12,7 @@ public class ShowBasket {
 
        System.out.println("----------------------------------------------------------");
 
-       Order.basketList.forEach(item -> {
+      basketList.forEach(item -> {
            double total = item.getPrice() * item.getPortion();
            System.out.printf("%-5d %-25s %-10.2f %-10.1f %-10.2f\n",
                    item.getCode(),
@@ -22,6 +24,6 @@ public class ShowBasket {
        });
        System.out.println("===========================================================");
 
-       Order.totalCost();
+       Order.totalCost(basketList);
    }
 }

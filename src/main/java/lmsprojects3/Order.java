@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Order {
 
-  static List<PojoFood> basketList = new ArrayList<>();
+   List<PojoFood> basketList = new ArrayList<>();
 
 
 
@@ -31,25 +31,25 @@ while (true) {
     switch (category) {
         case 1 -> {
             FoodList.foodList.stream().filter(t -> t.getCategories() == Categories.MAIN).forEach(System.out::println);
-            orderInfo(input);
+            orderInfo(input,basketList);
         }
         case 2 -> {
             FoodList.foodList.stream().filter(t -> t.getCategories() == Categories.APPETIZER).forEach(System.out::println);
-            orderInfo(input);
+            orderInfo(input,basketList);
         }
         case 3 -> {
             FoodList.foodList.stream().filter(t -> t.getCategories() == Categories.DESSERT).forEach(System.out::println);
-            orderInfo(input);
+            orderInfo(input,basketList);
         }
         case 4 -> {
             FoodList.foodList.stream().filter(t -> t.getCategories() == Categories.DRINK).forEach(System.out::println);
-            orderInfo(input);
+            orderInfo(input,basketList);
         }
         case 5 ->{
-            Menu.menu(input);
+            Menu.menu(input,basketList);
         }
         case 6 ->{
-         orderInfo(input);
+         orderInfo(input,basketList);
         }
         default -> System.out.println("Lütfen listedeki numaralar dışında bir değer girmeyiniz");
 
@@ -63,10 +63,11 @@ while (true) {
 
 
 
- public  void orderInfo(Scanner input) {
+ public  void orderInfo(Scanner input,   List<PojoFood> basketList) {
 
 
      while (true) {
+         ShowBasket showBasket = new ShowBasket();
 
          boolean found = false;
 
@@ -75,7 +76,8 @@ while (true) {
          String select = input.nextLine();
 
          if (select.equalsIgnoreCase("q")) {
-             Menu.menu(input);
+
+             Menu.menu(input,basketList);
              return;
          }
          for (PojoFood w : FoodList.foodList) {
@@ -84,9 +86,30 @@ while (true) {
                      System.out.println("Kaç porsiyon istediğinizi giriniz");
                      double portion = input.nextDouble();
                      input.nextLine();
+                     found=true;
+                     boolean merged = false;
 
-                     basketList.add(new PojoFood(w.getCode(),w.getName(),w.getPrice(),portion,w.getCategories()));
-found= true;
+
+                     for (PojoFood item : basketList) {
+
+
+                         if (item.getCode() == w.getCode()){
+
+
+                          item.setPortion(item.getPortion()+portion);
+                            merged =true;
+                             showBasket.showBasketMethod(basketList);
+                         }
+
+
+
+                     }
+                     if (!merged) {
+
+                         basketList.add(new PojoFood(w.getCode(), w.getName(), w.getPrice(), portion, w.getCategories()));
+                         showBasket.showBasketMethod(basketList);
+                     }
+
                  }
 
                  } if (!found){
@@ -102,9 +125,10 @@ found= true;
 
 
 
-public  static void totalCost() {
+public  static void totalCost(   List<PojoFood> basketList) {
 double sum=0;
-    for (PojoFood w : basketList) {
+
+for (PojoFood w : basketList) {
 
     sum =  sum  +  w.getPrice()*w.getPortion();
 

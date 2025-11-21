@@ -41,7 +41,7 @@ public class Register extends Pojo {
                String first = email.split("@")[0];
                String second = email.split("@")[1];
 
-          boolean a =    first.replaceAll("[^a-zA-Z-0-9._-]","").length()==0;
+          boolean a =    first.replaceAll("[a-zA-Z-0-9._-]","").length()==0;
 boolean b = second.equals("gmail.com")||second.equals("hotmail.com")||second.equals("yahoo.com");
 
 if (!a){

@@ -1,11 +1,12 @@
 package lmsprojects3;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
 
 
-    public static void menu(Scanner input) {
+    public static void menu(Scanner input,   List<PojoFood> basketList) {
         Order order = new Order();
         CancelOrder c = new CancelOrder();
         lmsprojects2.Menu n = new lmsprojects2.Menu();
@@ -23,9 +24,9 @@ public class Menu {
             input.nextLine();
             switch (işlem) {
                 case 1 -> order.categoryMethod(input);
-                case 2 -> c.cancelOrderMethod(input);
+                case 2 -> c.cancelOrderMethod(input,basketList);
                 case 3 -> n.menu(input);
-                case 4 ->s.showBasketMethod();
+                case 4 ->s.showBasketMethod(basketList);
                 case 5 ->  {
                   System.out.println("İşlem sonlandırılıyor...");
                 System.exit(0);
