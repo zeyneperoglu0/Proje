@@ -2,7 +2,7 @@ package lmsprojects2;
 
 import java.util.Scanner;
 
-public class Menu extends Pojo{
+public class Menu {
 
 
 //    Menü: Kullanıcıya işlem seçimi için menü gösterilir.

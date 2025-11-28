@@ -1,10 +1,8 @@
 package lmsprojects2;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.Scanner;
 
-public class Register extends Pojo {
+public class Register extends Account {
 
 
 
@@ -89,7 +87,7 @@ public String passwordControl(Scanner input){
 
 public void addAccount(){
 
-     if (Pojo.regMap.containsKey(getEmail())) {
+     if (Account.regMap.containsKey(getEmail())) {
          System.out.println("Bu e-maile ait bir hesap zaten kullanılıyor lütfen giriş yapınız");
      } else if (isEmailProper&&isPassProper){
           regMap.put(getEmail(),getPassword());

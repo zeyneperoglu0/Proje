@@ -80,5 +80,4 @@ this.average = (avg1+avg2+avg3)/3.0;
 
 
 
-
 }

@@ -46,7 +46,7 @@ this.teacher = teacher;
 
     public void printTeacher() {
         if (this.teacher != null) {
-            System.out.println("Dersi veren öğretmen: " + teacher.name + " - " + teacher.branch);
+            System.out.println("Dersi veren öğretmen: " + teacher.getName()+ " - " + teacher.getBranch());
         } else {
             System.out.println("Bu derse henüz öğretmen atanmadı.");
         }

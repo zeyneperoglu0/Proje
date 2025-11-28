@@ -3,19 +3,18 @@ package lmsprojects2;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class Pojo {
+public class Account {
 
     private String  password;
     private String email;
     public static Map<String,String> regMap = new LinkedHashMap<>();
 
-    public Pojo(String password, String email, Map<String, String> regMap) {
-        this.password = password;
+    public Account(String email, String password ) {
         this.email = email;
-        this.regMap = regMap;
+        this.password = password;
     }
 
-    public Pojo() {
+    public Account() {
     }
 
     public String getPassword() {
@@ -34,11 +33,13 @@ public class Pojo {
         this.email = email;
     }
 
-    public Map<String, String> getRegMap() {
-        return regMap;
-    }
 
-    public void setRegMap(Map<String, String> regMap) {
-        this.regMap = regMap;
+
+    @Override
+    public String toString() {
+        return "Pojo{" +
+                "password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

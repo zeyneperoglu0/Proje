@@ -13,7 +13,7 @@ int sayaç = 0;
             String email = input.nextLine();
             System.out.println("Kayıtlı hesabınıza ait şifrenizi giriniz");
            String password =input.nextLine();
-            for (Map.Entry<String, String> e : Pojo.regMap.entrySet()) {
+            for (Map.Entry<String, String> e : Account.regMap.entrySet()) {
                 if (email.equals(e.getKey()) && password.equals(e.getValue())) {
                     System.out.println("Hesabınıza giriş yaptınız");
                    found = true;
@@ -55,7 +55,7 @@ int sayaç = 0;
         while (true){   System.out.println("Lütfen e-mail adresinizi giriniz");
 
        String email = input.nextLine();
-        if (!Pojo.regMap.containsKey(email)){
+        if (!Account.regMap.containsKey(email)){
             System.out.println("Bu emaile ait hesap bulunamadı. Tekrar deneyiniz");
             continue;
         }
@@ -71,7 +71,7 @@ if (!newPass1.equals(newPass2)){
 
 }
 else {
-    Pojo.regMap.replace(email, newPass1);
+    Account.regMap.replace(email, newPass1);
     System.out.println("Şifreniz başarıyla değiştirildi");
     break;
 }
@@ -90,7 +90,7 @@ else {
 
 
 String newPassword = r.passwordControl(input);
-            if (Pojo.regMap.replace(email, oldPassword,newPassword )) {
+            if (Account.regMap.replace(email, oldPassword,newPassword )) {
 
                 System.out.println("Şifreniz başarıyla değiştirildi");
                 break;
