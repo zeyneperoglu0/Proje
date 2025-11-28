@@ -1,5 +1,7 @@
 package eticaret;
 
+import java.util.Locale;
+
 public class Products {
 
   private Integer productId;
@@ -10,10 +12,10 @@ public class Products {
     public Products() {
     }
 
-    public Products(String name, double price, Categories category) {
+    public Products(String name, double price, String category) {
         this.name = name;
         this.price = price;
-        this.category = category;
+        this.category = Categories.valueOf(category.trim().toUpperCase(Locale.ROOT));
     }
 
     public Integer getProductId() {

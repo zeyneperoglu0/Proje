@@ -20,7 +20,7 @@ List<S> findAll ();
 void update(S entity,U id);
 
 
-void delete(U id);
+void deleteById(U id);
 
 
 S findById (U id);
