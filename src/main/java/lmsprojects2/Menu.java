@@ -22,7 +22,7 @@ public void menu(Scanner input ) {
 
     switch (sec) {
         case "1" -> {
-            register.emailControl(input);
+//            register.emailControl(input,);
             register.passwordControl(input);
             register.addAccount();
         }

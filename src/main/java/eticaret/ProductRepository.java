@@ -44,7 +44,7 @@ JdbcUtils.setStatement();
     }
 
     @Override
-    public void save(Products products) {
+    public int save(Products products) {
 
 
    JdbcUtils.setConnection();
@@ -71,7 +71,7 @@ JdbcUtils.prst.executeUpdate();
         }
 
 
-
+        return 0;
     }
 
     @Override

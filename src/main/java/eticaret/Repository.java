@@ -11,7 +11,7 @@ public interface Repository <S,U> {
 void createTable();
 
 
-void save (S entity);
+int save (S entity);
 
 
 List<S> findAll ();
